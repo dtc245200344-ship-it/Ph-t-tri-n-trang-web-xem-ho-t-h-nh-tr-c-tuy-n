@@ -1,0 +1,160 @@
+/* Thiết lập chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* 1. Header cố định (Fixed Header) - Mức trung bình & nâng cao */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #e0e0e0;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo-box {
+    background-color: #c0392b;
+    color: white;
+    padding: 6px 15px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* 2. Head-link (Menu ngang) */
+.head-link {
+    margin-top: 60px; /* Đẩy nội dung xuống dưới fixed header */
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.head-link ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.head-link ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Bỏ gạch chân link, chuyển màu & bôi đậm khi hover - Mức trung bình */
+.head-link ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 5px 10px;
+    transition: 0.2s;
+}
+
+.head-link ul li a:hover {
+    text-decoration: none;
+    color: #c0392b;
+    font-weight: bold;
+}
+
+/* 3. Main Container (Chia 2 cột: Trái & Phải) */
+.main-container {
+    display: flex;
+    max-width: 1050px;
+    margin: 20px auto;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+/* Left Content: Danh sách video */
+.left-content {
+    width: 320px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: fit-content;
+}
+
+.video-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.video-item iframe {
+    pointer-events: none; /* Khóa tương tác iframe trong menu nhỏ nếu cần */
+}
+
+.video-item h4 {
+    font-size: 13px;
+    margin: 5px 0 2px 0;
+    color: #222;
+}
+
+.video-item .views, .video-item .channel {
+    font-size: 11px;
+    color: #666;
+    margin: 0;
+}
+
+/* Right Content: Nội dung chi tiết */
+.right-content {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.video-player iframe {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.video-title {
+    font-size: 16px;
+    color: #222;
+    margin: 15px 0 5px 0;
+}
+
+.author {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.video-description p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* 4. Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+/* 5. Responsive (Mức nâng cao) */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-content, .right-content {
+        width: 100%;
+    }
+}
